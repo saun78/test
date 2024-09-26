@@ -9,4 +9,5 @@ class cartid extends Model
 {
     use HasFactory;
     protected $table = "cartid";
+    protected $fillable = ['id'];
 }

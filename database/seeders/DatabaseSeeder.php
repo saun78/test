@@ -42,7 +42,7 @@ class DatabaseSeeder extends Seeder
         ]);   
         user::create([
             "name"=>'jagung',
-            "email"=>'yumingtan',
+            "email"=>'yumingtan0@gmail.com',
             "password"=>'123',
         ]);   
     }

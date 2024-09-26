@@ -58,15 +58,18 @@ class cartcontroller extends Controller
         
         if($cart){
 
+            $cartid = new cartid();
+            $cartid->id = $c_id;
+            $cartid->save();
         
-            return redirect("cart_list")->with('success','checkout complete');
+            return redirect("checkout")->with('success','checkout complete');
 
         }
     }
 
         public function checkout_show(){
                 
-            $carts = carts::selectRaw("*,carts.p_mass as total_mass")
+            $carts = carts::selectRaw("*,carts.p_mass as total_mass,carts.updated_at as date")
             ->join('products','carts.p_id','=','products.id')
             ->where("u_id",Auth::id())
             ->where("status","checkout")
