@@ -11,6 +11,9 @@
         @csrf
         <label for="password">email</label>
         <input type="text" id="email" name="email">
+        @error('email')
+            {{ 'message' }}
+        @enderror
         <label for="password">password</label>
         <input type="password" id="password" name="password">
         <input type="submit" value="submit">

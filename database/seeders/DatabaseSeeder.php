@@ -39,6 +39,11 @@ class DatabaseSeeder extends Seeder
             "p_name"=>'orange',
             "p_mass"=>'100',
             "p_price"=>'3.00',
-        ]);      
+        ]);   
+        user::create([
+            "name"=>'jagung',
+            "email"=>'yumingtan',
+            "password"=>'123',
+        ]);   
     }
 }

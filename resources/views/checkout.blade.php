@@ -7,22 +7,24 @@
     <title>Document</title>
 </head>
 <body>
-    <a href="/cart_list">cart_list</a><br>
-    <a href={{ route('checkout') }}>checkout_list</a>
-    @foreach ($products as $product)
         <table>
             <tr>
                 <th>product</th>
                 <th>mass</th>
                 <th>price</th>
+                <th>status</th>
             </tr>
+            @foreach ($carts as $cart)
             <tr>
-                <td>{{ $product->p_name }}</td>
-                <td>{{ $product->p_mass }}</td>
-                <td>{{ $product->p_price }}</td>
-                <td><a href="{{ route('show', $product->id) }}">buy</a></td>
+                @csrf
+                <td>{{ $cart->p_name }}</td>
+                <td>{{ $cart->total_mass }}</td>
+                <td>{{ $cart->total_mass * $cart->p_price/100 }}</td>
+                <td>{{ $cart->status }}</td>
             </tr>
+            @endforeach
+        </form>
         </table>
-    @endforeach
+  
 </body>
 </html>

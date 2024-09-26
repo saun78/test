@@ -17,7 +17,7 @@ public function register(Request $request){
     ]);
         $user = User::create($formfeild);
 
-        return redirect('register');
+        return redirect('login');
     }
 
     
